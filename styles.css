@@ -1,0 +1,166 @@
+body {
+    font-family: 'Courier New', monospace;
+    background: url("fon.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation:gi backgroundGlow 5s ease-in-out infinite alternate;
+}
+
+/* Анимация для фонового градиента */
+@keyframes backgroundGlow {
+    0% {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+    100% {
+        background: linear-gradient(135deg, #ff6b6b, #fcb045);
+    }
+}
+
+/* Контейнер для содержимого */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    animation: containerGlow 3s ease-in-out infinite alternate;
+}
+
+/* Анимация для контейнера */
+@keyframes containerGlow {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 50px rgba(255, 255, 255, 0.9);
+    }
+}
+
+/* Заголовок */
+h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* Анимация для текста */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Стиль для формы */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.05);
+}
+
+input[type="text"], input[type="submit"], select {
+    padding: 15px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+input[type="submit"] {
+    background: linear-gradient(45deg, #ff6b6b, #fcb045);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(45deg, #fcb045, #ff6b6b);
+    transform: translateY(-3px);
+}
+
+select {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль для сообщений об ошибках и успехах */
+.error {
+    color: #ff6b6b;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success {
+    color: #4CAF50;
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    animation: glowSuccess 2s ease-in-out infinite alternate;
+}
+
+/* Анимация для успешного добавления */
+@keyframes glowSuccess {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+}
